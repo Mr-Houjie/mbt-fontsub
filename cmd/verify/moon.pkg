@@ -1,0 +1,15 @@
+// 一致性自检：不依赖 `moon test` 的嵌套进程，直接在目标平台运行。
+//
+// 每个用例走完整链路：解析 → 子集化 → 回读 → 度量/覆盖/闭包/校验和比对。
+// 用法：
+//   moon run cmd/verify                    # 跑仓库自带样本
+//   moon run cmd/verify -- <字体> [字体...] # 对语料目录逐字体巡检
+
+import {
+  "Mr-Houjie/mbt-fontsub" @lib,
+  "moonbitlang/core/env",
+  "moonbitlang/x/fs",
+  "moonbitlang/x/sys",
+}
+
+pkgtype(kind: "executable")
