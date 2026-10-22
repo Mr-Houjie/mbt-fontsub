@@ -2,7 +2,7 @@
 
 ## 一、项目名称与仓库
 
-mbt-fontsub（MoonBit 原生 TrueType 字体子集化引擎）｜https://github.com/Mr-Houjie/mbt-fontsub ｜ MIT ｜ MoonBit ≥ 0.1.20260920
+mbt-fontsub（MoonBit 原生 TrueType 字体子集化引擎）｜https://github.com/Mr-Houjie/mbt-fontsub ｜ MIT ｜ MoonBit ≥ 0.1.20260920 ｜ 已发布至 mooncakes.io：https://mooncakes.io/docs/Mr-Houjie/mbt-fontsub （`moon add Mr-Houjie/mbt-fontsub@0.1.0`）
 
 ## 二、项目简介
 
