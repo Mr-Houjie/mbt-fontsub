@@ -1,0 +1,6 @@
+# 字体语料清单（TSV）
+# name	url	sha256	license
+# 字体文件不进仓库：体积大，且许可证需随附。fetch_corpus.py 会下载到 corpus/fonts/ 并校验哈希。
+VT323-Regular.ttf	https://raw.githubusercontent.com/google/fonts/main/ofl/vt323/VT323-Regular.ttf	cf4de751ada78ceac033dbe16a687742939995b77bc2a052ae17a4957958594d	SIL OFL 1.1
+PressStart2P-Regular.ttf	https://raw.githubusercontent.com/google/fonts/main/ofl/pressstart2p/PressStart2P-Regular.ttf	034c77f1f05ec89421e4a63f0e3a4ca1ecf852cc6d2bf611f126f275728e017d	SIL OFL 1.1
+ZCOOLXiaoWei-Regular.ttf	https://raw.githubusercontent.com/google/fonts/main/ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf	a42b620140f493db42f741351dfbf343c0936d58588ee8004b8b2a218d997ff1	SIL OFL 1.1
