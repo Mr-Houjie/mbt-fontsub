@@ -35,7 +35,8 @@ test "按文本子集化并通过回读校验" {
   assert_true(report.ok)
   assert_true(report.subset_size < report.original_size)
   assert_true(report.glyphs < font.num_glyphs)
-  assert_true(report.chars_checked >= 18)
+  // "Hello, MoonBit! 0123" 的唯一字符共 16 个
+  assert_true(report.chars_checked >= 16)
   let rebuilt = parse_font(subset)
   assert_true(rebuilt.has_glyph('H'))
   assert_true(rebuilt.has_glyph('!'))
