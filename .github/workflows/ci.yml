@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-build-test:
+    runs-on: ubuntu-latest
+    name: Check / Build / Test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Set up MoonBit
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+
+      - name: Update dependencies
+        run: |
+          moon version --all
+          moon update
+
+      - name: Check (type/syntax)
+        run: moon check --deny-warn
+
+      - name: Build
+        run: moon build
+
+      - name: Test
+        run: moon test
+
+      - name: Conformance self-check
+        run: moon run cmd/verify
+
+      - name: Cross-library conformance (fontTools)
+        run: |
+          python -m pip install --quiet fonttools
+          moon run cmd/main -- subset tests/fixtures/VT323-Regular.ttf \
+            --text "Hello, MoonBit! 0123" -o /tmp/subset.ttf
+          python tools/crosscheck.py tests/fixtures/VT323-Regular.ttf \
+            /tmp/subset.ttf "Hello, MoonBit! 0123"
