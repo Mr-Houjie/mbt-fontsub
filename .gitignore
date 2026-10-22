@@ -1,0 +1,10 @@
+.DS_Store
+_build/
+target/
+target
+.mooncakes/
+.moonagent/
+pkg.generated.mbti
+cmd/main/pkg.generated.mbti
+*.subset.ttf
+corpus/fonts/
